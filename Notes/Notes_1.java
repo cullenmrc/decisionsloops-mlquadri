@@ -158,4 +158,146 @@ public class Notes_1
         }
         //return(if (Math.abs(n1-n1)<EPSILON)) also gives the same return value
     }
+    public static void printStudentClass(int gradeNumber)
+    {
+        /*
+         * switch statment
+         *      conditional
+         *          like if statment
+         *      perfers evaluating discret values
+         *      flow of exacution jumps to the branch matching the expresion
+         *      can only be used for
+         *          Byte
+         *          Short
+         *          Char
+         *          Int int primitive types
+         *          Emumerations
+         *          String class
+         */
+        switch(gradeNumber)
+        {
+            /*
+             * it chechs the peramiter value for a class that matches it
+             */
+            case 6:
+            case 7:
+            case 8:
+            {
+                System.out.println("6, 7, 8");
+                /*
+                 * brack causes the fkow of exacution to leave the breack
+                 *      without it the flow just runs into the next case
+                 */
+                break;
+            }
+            case 9:
+            {
+                System.out.println("9");
+                break;
+            }
+            case 10:
+            {
+                System.out.println("10");
+                break;
+            }
+            case 11:
+            {
+                System.out.println("11");
+                break;
+            }
+            case 12:
+            {
+                System.out.println("12");
+                break;
+            }
+            /*
+             * defalt = if there is no case that maches the switch
+             */
+            default:
+            {
+                System.out.println("IDK");
+                break;
+            }
+        }
+    }
+    /*
+     * inumeration
+     *      set of objects that represents a set of objects
+     *      compared to == operater
+     *      enumerations are Capitulised like classes
+     *      enumeration values are Capitulised like constence
+     */
+    public enum FilingStatus{SINGLE, MARRIED, HEAD_OF_HOUSEHOLD};
+    /*
+     * filling status      standerd deduction
+     * single               6300
+     * married joint        12600
+     * head of house        9250
+     */
+    public static double calculateStanderedDeduction(FilingStatus status)
+    {
+        double deduction = 0;
+        switch(status)
+        {
+            case SINGLE:
+            {
+                deduction=6300;
+                break;
+            }
+            case MARRIED:
+            {
+                deduction=12600;
+                break;
+            }
+            case HEAD_OF_HOUSEHOLD:
+            {
+                deduction=9250;
+                break;
+            }
+        }
+        if (status == FilingStatus.MARRIED)
+        {
+            System.out.println("IDK");
+        }
+        return deduction;
+    }
+    public static void incermentEx()
+    {
+        /*
+         * post incerment/detcement operators
+         *  equivalent to adding or subtracting 1
+         *  returns the curent value and thatn incerments or decrements
+         */
+        int b=7;
+        int a=b++;
+        System.out.println("a="+a+" b="+b);//a=7 b=8
+        
+        /*
+         * pre incerment/detcement operators
+         *  equivalent to adding or subtracting 1
+         *  returns the value after incerments or decrements
+         */
+        int c=7;
+        int d=++c;
+        System.out.println("c="+c+" d="+d);//c=8 d=8
+        
+        /*
+         * assiment operators
+         *      same as python
+         *          +=
+         *          -=
+         *          *=
+         *          /=
+         *          %=
+         *     does operationb than returns result
+         */
+        int x=7;
+        int y=7;
+        int z=7;
+        
+        x=x+1;
+        y++;
+        z+=1;
+        System.out.println("x="+x+" y="+y+" z="+z);//x=8 y=8 =z=8
+    }
 }
