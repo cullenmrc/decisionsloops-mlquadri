@@ -15,13 +15,24 @@
 import java.util.Scanner;
 public class LeapYear
 {
+    boolean leapyear=false;
+    final int FOUR=4;
      /**
      * Default constructor for objects of class LeapYear
      */
     public LeapYear()
     {
-        final static double year= 365.25
-        final static double 
-        final static double 
+        Scanner s= new Scanner(System.in);
+        System.out.println("Enter a year: ");
+        int year=s.nextInt();
+        isLeapYear(year);
+        System.out.println("year "+year+" is a leap year: "+leapyear);
+    }
+    public void isLeapYear(int year)
+    {
+        if ( (((year%FOUR)==0 )&&((year%100)>0))||((year%400)==0) )
+        {
+            leapyear=true;
+        }
     }
 }
