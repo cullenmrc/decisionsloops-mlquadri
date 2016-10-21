@@ -1,5 +1,4 @@
 
-
 /**
  * Write a program that prompts the user for a wavelength value and prints a descrip-
  * tion of the corresponding part of the electromagnetic spectrum, as given in the fol-
@@ -23,56 +22,29 @@ public class Spectrum
     /**
      * Default constructor for objects of class Spectrum
      */
-    public enum type{Radio_Waves, Microwaves, Infrared, Visible_light, 
-                        Ultraviolet, X_rays, Gamma_rays}
     public Spectrum()
     {
         Scanner s= new Scanner(System.in);
-        System.out.println("Enter a wave type: ");
-        int type=s.nextEnum();
-        string print="";
-        switch(type)
-        {
-            case Radio_Waves:
-            {
-                print="";
-                break;
-            }
-            case Microwaves:
-            {
-                print="";
-                break;
-            }
-            case Infrared:
-            {
-                print="";
-                break;
-            }
-            case Visible_light:
-            {
-                print="";
-                break;
-            }
-            case Ultraviolet:
-            {
-                print="";
-                break;
-            }
-            case X_rays:
-            {
-                print="";
-                break;
-            }
-            case Gamma_rays:
-            {
-                print="";
-                break;
-            }
-            defult:
-            {
-                print="";
-                break;
-            }
+        System.out.println("Enter a wave langth: ");
+        double wave=s.nextDouble();
+        String print="";
+        if(wave < 1.0e-1){
+            print="Radio Waves, < 3 × 109";
+        }else if( (1e-3 > wave) && (wave < 1e-1) ) { 
+            print="Microwaves, 3 × 109 to 3 × 1011";
+        }else if( (7e-7>wave)&&(wave<1e-3) ){
+            print="Infrared, 3 × 1011 to 4 × 1014";
+        }else if( (4e-7>wave)&&(wave<7e-7) ){
+            print="Visible light, 4 × 1014 to 7.5 × 1014";
+        }else if( (1e-8>wave)&&(wave<4e-7) ){
+            print="Ultraviolet, 7.5 × 1014 to 3 × 1016";
+        }else if( (1e-11>wave)&&(wave<1e-8) ){
+            print="X rays, 3 × 1016 to 3 × 1019";
+        }else if(wave>10){
+            print="Gamma rays, –11 > 3 × 1019";
+        }else{
+            print="IDK";
         }
+        System.out.println(print);
     }
 }

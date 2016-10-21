@@ -30,7 +30,7 @@ public class LeapYear
     }
     public void isLeapYear(int year)
     {
-        if ( (((year%FOUR)==0 )&&((year%100)>0))||((year%400)==0) )
+        if ( (((year%FOUR)==0 )&&((year%100)!=0))||((year%400)==0) )
         {
             leapyear=true;
         }
