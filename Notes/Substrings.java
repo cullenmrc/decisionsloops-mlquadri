@@ -20,15 +20,39 @@ public class Substrings
         System.out.print("Enter String: ");
         String inp = s.next();
         
-        for( int run = 1;
-                 run < inp.length();
-                 run++ ) {
-           for( int i = 0;
-                    i < inp.length();
-                    i++ ) {
-               System.out.println(inp.substring(i,(i+run)));
+        
+        for ( int length = 1; length <= inp.length(); length++) {
+            
+            for ( int startingpos = 0; startingpos < inp.length(); startingpos++) {
+                if(startingpos+length > inp.length() - 1) break;
+                System.out.println(inp.substring(startingpos,startingpos+length));
+                
             }
-           if ()
+            
         }
+        
+        System.out.println(inp);
+            
+        
+        
+        
+        
+//         for( int run = 1;
+//                  run < inp.length();
+//                  run++ ) {
+//            for( int i = 0;
+//                     i < inp.length();
+//                     i++ ) {
+//                System.out.println(inp.substring(i,(i+run)));
+//                if (run==(inp.length))
+//                {
+//                    break;
+//                }
+//             }
+//            if (run==(inp.length))
+//                {
+//                    break;
+//                }
+//         }
     }
 }
