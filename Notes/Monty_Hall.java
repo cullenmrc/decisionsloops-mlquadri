@@ -21,25 +21,66 @@ sticking with the original choice. Run 1,000 iterations and print both counters.
  */
 public class Monty_Hall
 {
-   public static void main(String[] args) {
-       int winbyswitching = 0;
-       int winsnotbyswitching = 0;
-       int d1;
-       int d2;
-       int d3;
-       final goat = 1;
-       final win = 2;
-       Random r = new Random();
+    public static void main(String[] args) {
+        int winbyswitching = 0;
+        int winsnotbyswitching = 0;
+        Random r = new Random();
 
-       for(int iterations = 0; iterations < 1000; iterations++) {
-           int playersChoice = r.nextInt(3)+1;
-           int correctdoor = r.nextInt(3)+1;
-           int openedDoor = 0;
-           
-           System.out.println(openedDoor);
-           
-           
+        for(int iterations = 0; iterations < 100000; iterations++) {
+            int playersChoice = r.nextInt(3)+1;
+            int correctDoor = r.nextInt(3)+1;
+            int openedDoor = 0;
+
+            if(playersChoice == 1 && correctDoor == 1) {
+                openedDoor = r.nextInt(2);
+                switch (openedDoor) {
+                    case 0:
+                    openedDoor = 2;
+                    break;
+                    default:
+                    openedDoor = 3;
+                }
+
+            }
+            else if(playersChoice == 2 && correctDoor == 2) {
+                openedDoor = r.nextInt(2);
+                switch (openedDoor) {
+                    case 0:
+                    openedDoor = 1;
+                    break;
+                    default:
+                    openedDoor = 3;
+                }
+            }
+            else if(playersChoice == 3 && correctDoor == 3) {
+                openedDoor = r.nextInt(2);
+                switch (openedDoor) {
+                    case 0:
+                    openedDoor = 1;
+                    break;
+                    default:
+                    openedDoor = 2;
+                }
+            }
+            else if((playersChoice == 1 && correctDoor == 2) || (playersChoice == 2 && correctDoor == 1)) {
+                openedDoor = 3;
+            }
+            else if((playersChoice == 2 && correctDoor == 3) || (playersChoice == 3 && correctDoor == 2)) {
+                openedDoor = 1;
+            }
+            else {
+                openedDoor = 2;
+            }
+            
+            if(playersChoice == correctDoor) {
+                winsnotbyswitching++;
+            } else {
+                winbyswitching++;
+            }
+                
         }
+        
+        System.out.println("Wins by switching: " + winbyswitching);
+        System.out.println("Wins by not switching: " + winsnotbyswitching);
     }
-
 }
