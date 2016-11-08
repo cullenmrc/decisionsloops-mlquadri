@@ -5,10 +5,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
-
 import twitter4j.*;
-
-
 /**
  * This class queries Twitter for tweets in a specific state that contain a specified keyword. It then associates a sentiment
  *      with that tweet. The sentiment for all tweets in a state is aggregated and averaged. The resulting average sentiments
@@ -29,12 +26,9 @@ public class TwitterMapper
     private Twitter twitter;
     private ArrayList<State> states;
     private String keyword;
-    
     private static String HTML_TEMPLATE_FILENAME = "mapTemplate.html";
     private static String STATE_DATA_FILENAME = "states.csv";
     private static int MAX_TWEETS_PER_STATE = 100;
-
-    
     /**
      * Standard main method for the program. Creates a TwitterMapper object for a given keyword, find tweets matching
      *      the keyword in each of the 50 US states, and then generates an HTML file visualizing the average sentiment

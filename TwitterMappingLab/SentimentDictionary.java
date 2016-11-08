@@ -3,8 +3,6 @@ import java.io.FileNotFoundException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
-
-
 /**
  * This class is a singleton that manages access to the sentiments dictionary.
  * 
@@ -49,13 +47,11 @@ public class SentimentDictionary
     private SentimentDictionary( String fileName )
     {
         dictionary = new HashMap<String, Double>();
-        
         try
         {
             File sentimentFile = new File( fileName );
             Scanner in = new Scanner( sentimentFile );
             in.useDelimiter( "[,\r\n]" );
-            
             while( in.hasNext())
             {
                 String word = in.next();
@@ -63,14 +59,12 @@ public class SentimentDictionary
                 dictionary.put( word, sentiment );
                 in.nextLine();
             }
-            
             in.close();
         }
         catch( FileNotFoundException e )
         {
             System.out.println( "Sentiment file: " + fileName + " not found." );
         }
-        
     }
     
     /**
@@ -88,10 +82,9 @@ public class SentimentDictionary
         {
             singleton = new SentimentDictionary( SENTIMENTS_FILENAME );
         }
-        
         return singleton;
     }
-
+    
     /**
      * Returns the sentiment associated with the specified word.
      *      The sentiment will range from -1 to 1, where negative values correspond
