@@ -1,5 +1,3 @@
-
-
 /**
  * Write a description of class State here.
  * 
@@ -9,33 +7,87 @@
 public class State
 {
     String abbreviation; 
-    twitter4j.GeoLocation center= new twitter4j.GeoLocation();
+    twitter4j.GeoLocation center;
     double area;
     double sentiment;
     /**
      * Default constructor for objects of class State
      */
-    public State()
+    public State(String abbreviation, twitter4j.GeoLocation center, double area)
     {
-        // initialise instance variables
-        x = 0;
+        this.abbreviation=abbreviation; 
+        this.center=center;
+        this.area=area;
+        this.sentiment=sentiment;
     }
-
+    
     /**
      * An example of a method - replace this comment with your own
-     *    that describes the operation of the method
+     *  that describes the operation of the method
      *
-     * @pre        preconditions for the method
-     *            (what the method assumes about the method's parameters and class's state)
+     * @pre     preconditions for the method
+     *          (what the method assumes about the method's parameters and class's state)
      * @post    postconditions for the method
-     *            (what the method guarantees upon completion)
-     * @param    y    description of parameter y
-     * @return    description of the return value
+     *          (what the method guarantees upon completion)
+     * @param   y   description of parameter y
+     * @return  description of the return value
      */
-    public int sampleMethod(int y)
+    public void setSentiment(double sentiment)
     {
-        // put your code here
-        return x+y;
+        this.sentiment=sentiment;
+    }
+
+    /**
+     * An example of a method - replace this comment with your own
+     *  that describes the operation of the method
+     *
+     * @pre     preconditions for the method
+     *          (what the method assumes about the method's parameters and class's state)
+     * @post    postconditions for the method
+     *          (what the method guarantees upon completion)
+     * @param   y   description of parameter y
+     * @return  description of the return value
+     */
+    public double getRadius()
+    {
+        double radius;
+        return radius;
+    }
+    
+    public String getAbbreviation()
+    {
+        return abbreviation;
+    }
+
+    public twitter4j.GeoLocation getCenter()
+    {
+        return center;
     }
 
+    public double getArea()
+    {
+        return area;
+    }
+
+    public double getSentiment()
+    {
+        return sentiment;
+    }
+   
+    /**
+     * An example of a method - replace this comment with your own
+     *  that describes the operation of the method
+     *
+     * @pre     preconditions for the method
+     *          (what the method assumes about the method's parameters and class's state)
+     * @post    postconditions for the method
+     *          (what the method guarantees upon completion)
+     * @param   y   description of parameter y
+     * @return  description of the return value
+     */
+    public String toString()
+    {
+        String str="abbreviation: "+abbreviation+", center: "+center+", area: "+area+", sentiment: "+sentiment;
+        return str;
+    }
 }

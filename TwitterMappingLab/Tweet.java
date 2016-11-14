@@ -50,27 +50,42 @@ public class Tweet
     {
         SentimentDictionary duct = SentimentDictionary.getSingleton();
         Scanner s = new Scanner(text);
+        String textword="";
         while(s.hasNext())
         {
             textword=s.next();
             sentiment+=duct.getSentiment(textword);
         }
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *  that describes the operation of the method
-     *
-     * @pre     preconditions for the method
-     *          (what the method assumes about the method's parameters and class's state)
-     * @post    postconditions for the method
-     *          (what the method guarantees upon completion)
-     * @param   y   description of parameter y
-     * @return  description of the return value
-     */
+    
+    public String getUser()
+    {
+        return user;
+    }
+
+    public String getText()
+    {
+        return text;
+    }
+
+    public twitter4j.GeoLocation getLocation()
+    {
+        return location;
+    }
+
+    public Date getDate()
+    {
+        return date;
+    }
+
+    public double getSentiment()
+    {
+        return sentiment;
+    }
+
     public String toString ()
     {
-       String str="";
+       String str="User: "+user+", Text: "+text+", Location: "+location+", Date: "+date+", Sentiment: "+sentiment;
        return str;
     }
 }
