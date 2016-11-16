@@ -81,7 +81,10 @@ public class TwitterMapper
      */
     public void findTweetsForState( State state) throws TwitterException
     {
-        
+        for (Status status : result.getTweets())
+        {
+            
+        }
     }
     
     /**

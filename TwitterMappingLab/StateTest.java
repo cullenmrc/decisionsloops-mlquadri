@@ -1,10 +1,7 @@
-
-
 import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
 /**
  * Write a description of test class StateTest here.
  * 
@@ -13,18 +10,12 @@ import org.junit.Test;
  */
 public class StateTest
 {
-    /** description of instance variable x (add comment for each instance variable) */
-    private int x;
-
     /**
      * Default constructor for objects of class StateTest
      */
     public StateTest()
     {
-        // initialise instance variables
-        x = 0;
     }
-    
     /**
      * Sets up the test fixture.
      *
@@ -34,7 +25,6 @@ public class StateTest
     public void setUp()
     {
     }
-
     /**
      * Tears down the test fixture.
      *
@@ -44,5 +34,19 @@ public class StateTest
     public void tearDown()
     {
     }
-
+    @Test
+    public int sampleMethod()
+    {
+        String abbreviation="1";
+        GeoLocation center=1;
+        double area=1;
+        State s = new State(abbreviation, center, area);
+        double sentiment=s.setSentiment
+        double radius=s.getRadius
+        String abbreviation=s.getAbbreviation
+        GeoLocation center=s.
+        double area=s.getArea
+        double sentiment=s.getSentiment()
+        String toString=s.toString
+    }
 }
