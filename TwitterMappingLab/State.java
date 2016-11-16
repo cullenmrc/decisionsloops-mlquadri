@@ -20,7 +20,8 @@ public class State
         this.area=area;
         this.sentiment=sentiment;
     }
-    
+    
+
     /**
      * An example of a method - replace this comment with your own
      *  that describes the operation of the method
@@ -36,7 +37,8 @@ public class State
     {
         this.sentiment=sentiment;
     }
-
+
+
     /**
      * An example of a method - replace this comment with your own
      *  that describes the operation of the method
@@ -51,14 +53,18 @@ public class State
     public double getRadius()
     {
         double radius;
+        
         return radius;
     }
-    
+    
+
+
     public String getAbbreviation()
     {
         return abbreviation;
     }
-
+
+
     public twitter4j.GeoLocation getCenter()
     {
         return center;
@@ -68,7 +74,8 @@ public class State
     {
         return area;
     }
-
+
+
     public double getSentiment()
     {
         return sentiment;

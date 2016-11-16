@@ -44,5 +44,11 @@ public class TweetTest
     public void tearDown()
     {
     }
+
+    @test
+    public void sampleMethod(int y)
+    {
+        
+    }
 
 }
