@@ -1,10 +1,7 @@
-
-
 import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
 /**
  * Write a description of test class TweetTest here.
  * 
@@ -13,16 +10,12 @@ import org.junit.Test;
  */
 public class TweetTest
 {
-    /** description of instance variable x (add comment for each instance variable) */
-    private int x;
-
     /**
      * Default constructor for objects of class TweetTest
      */
     public TweetTest()
     {
-        // initialise instance variables
-        x = 0;
+        
     }
     
     /**
@@ -44,11 +37,22 @@ public class TweetTest
     public void tearDown()
     {
     }
-
-    @test
-    public void sampleMethod(int y)
-    {
-        
-    }
 
+    @Test
+    public void test()
+    {
+        Date date= 1;
+        GeoLocation location= 1;
+        double Sentiment= 1;
+        String Text= "1";
+        String User= "1";
+        String toString= "1";
+        Tweet t = new Tweet(user, text, location, date);
+        Date date= t.getDate();
+        GeoLocation location= t.getLocation();
+        double Sentiment= t.getSentiment();
+        String Text= t.getText();
+        String User= t.getUser();
+        String toString= t.toString();
+    }
 }

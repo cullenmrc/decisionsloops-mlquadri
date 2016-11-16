@@ -1,3 +1,4 @@
+import java.lang.Math;
 /**
  * Write a description of class State here.
  * 
@@ -21,7 +22,6 @@ public class State
         this.sentiment=sentiment;
     }
     
-
     /**
      * An example of a method - replace this comment with your own
      *  that describes the operation of the method
@@ -38,7 +38,6 @@ public class State
         this.sentiment=sentiment;
     }
 
-
     /**
      * An example of a method - replace this comment with your own
      *  that describes the operation of the method
@@ -52,18 +51,14 @@ public class State
      */
     public double getRadius()
     {
-        double radius;
-        
+        double radius=area/(2*(Math.PI));
         return radius;
     }
     
-
-
     public String getAbbreviation()
     {
         return abbreviation;
     }
-
 
     public twitter4j.GeoLocation getCenter()
     {
@@ -74,7 +69,6 @@ public class State
     {
         return area;
     }
-
 
     public double getSentiment()
     {
