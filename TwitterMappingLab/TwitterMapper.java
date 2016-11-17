@@ -81,9 +81,12 @@ public class TwitterMapper
      */
     public void findTweetsForState( State state) throws TwitterException
     {
+        Twitter twitter = TwitterFactory.getSingleton();
+        Query query = new Query("");
+        QueryResult result = twitter.search(query);
         for (Status status : result.getTweets())
         {
-            
+           //System.out.println("@" + status.getUser().getScreenName() + ":" + status.getText());
         }
     }
     
@@ -115,13 +118,10 @@ public class TwitterMapper
         {
             File htmlTemplateFile = new File( HTML_TEMPLATE_FILENAME );
             Scanner in = new Scanner( htmlTemplateFile );
-
             PrintWriter out = new PrintWriter( this.keyword + ".html" );
-
             while( in.hasNextLine())
             {
                 String line = in.nextLine();
-                
                 if( line.contains( "### insert state data here ###" ))
                 {
                     // insert the sentiment values for each state according to the expected format
@@ -141,7 +141,6 @@ public class TwitterMapper
                     out.println( line );
                 }
             }
-            
             out.close();
             in.close();
         }
@@ -164,13 +163,11 @@ public class TwitterMapper
     private void loadStateInformation( String fileName )
     {
         this.states = new ArrayList<State>();
-        
         try
         {
             File statesFile = new File( fileName );
             Scanner in = new Scanner( statesFile );
             in.useDelimiter( "[,\r\n]" );
-            
             while( in.hasNext())
             {
                 String abbreviation = in.next();
@@ -180,7 +177,6 @@ public class TwitterMapper
                 in.nextline();
                 this.states.add( new State( abbreviation, new GeoLocation( longitude, latitude ), area ));
             }
-            
             in.close();
         }
         catch( FileNotFoundException e )

@@ -1,9 +1,9 @@
 import java.lang.Math;
 /**
- * Write a description of class State here.
+ * A program that creates the states classes, giving them a positon, sentiment and size.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Muhammed Quadri) 
+ * @version (1.0)
  */
 public class State
 {
@@ -23,15 +23,10 @@ public class State
     }
     
     /**
-     * An example of a method - replace this comment with your own
-     *  that describes the operation of the method
+     * Changes the states sentiment
      *
-     * @pre     preconditions for the method
-     *          (what the method assumes about the method's parameters and class's state)
-     * @post    postconditions for the method
-     *          (what the method guarantees upon completion)
-     * @param   y   description of parameter y
-     * @return  description of the return value
+     * @param   sentiment   states sentiment
+     * @return  void
      */
     public void setSentiment(double sentiment)
     {
@@ -39,15 +34,9 @@ public class State
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     *  that describes the operation of the method
+     * Calculates the radius of the circle that the state is baced off
      *
-     * @pre     preconditions for the method
-     *          (what the method assumes about the method's parameters and class's state)
-     * @post    postconditions for the method
-     *          (what the method guarantees upon completion)
-     * @param   y   description of parameter y
-     * @return  description of the return value
+     * @return  the radius of the circle that the state is baced off as a double
      */
     public double getRadius()
     {
@@ -55,36 +44,50 @@ public class State
         return radius;
     }
     
+    /**
+     * A accessors for instance variable abbreviation
+     *
+     * @return  abbreviation
+     */
     public String getAbbreviation()
     {
         return abbreviation;
     }
 
+    /**
+     * A accessors for instance variable center
+     *
+     * @return  center
+     */
     public twitter4j.GeoLocation getCenter()
     {
         return center;
     }
 
+    /**
+     * A accessors for instance variable area
+     *
+     * @return  area
+     */
     public double getArea()
     {
         return area;
     }
 
+    /**
+     * A accessors for instance variable sentiment
+     *
+     * @return  sentiment
+     */
     public double getSentiment()
     {
         return sentiment;
     }
    
     /**
-     * An example of a method - replace this comment with your own
-     *  that describes the operation of the method
+     * Returns all the instence vareables as a string
      *
-     * @pre     preconditions for the method
-     *          (what the method assumes about the method's parameters and class's state)
-     * @post    postconditions for the method
-     *          (what the method guarantees upon completion)
-     * @param   y   description of parameter y
-     * @return  description of the return value
+     * @return  all instance variables as a string
      */
     public String toString()
     {

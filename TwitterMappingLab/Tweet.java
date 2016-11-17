@@ -16,7 +16,7 @@ import twitter4j.*;
  */
 public class Tweet
 {
-    /** description of instance variable x (add comment for each instance variable) */
+    /***/
     String user;
     String text;
     twitter4j.GeoLocation location;
@@ -36,15 +36,9 @@ public class Tweet
     }
     
     /**
-     * An example of a method - replace this comment with your own
-     *  that describes the operation of the method
+     * finds the sentement of the text
      *
-     * @pre     preconditions for the method
-     *          (what the method assumes about the method's parameters and class's state)
-     * @post    postconditions for the method
-     *          (what the method guarantees upon completion)
-     * @param   y   description of parameter y
-     * @return  description of the return value
+     * @return  void
      */
     public void calculateSentiment()
     {
@@ -57,32 +51,62 @@ public class Tweet
             sentiment+=duct.getSentiment(textword);
         }
     }
-    
+    
+    /**
+     * A accessors for instance variable user
+     *
+     * @return  user as a String
+     */
     public String getUser()
     {
         return user;
     }
 
+    /**
+     * A accessors for instance variable text
+     *
+     * @return  text as a String
+     */
     public String getText()
     {
         return text;
     }
 
+    /**
+     * A accessors for instance variable location
+     *
+     * @return  location as a twitter4j.GeoLocation
+     */
     public twitter4j.GeoLocation getLocation()
     {
         return location;
     }
 
+    /**
+     * A accessors for instance variable date
+     *
+     * @return  date as a Date
+     */
     public Date getDate()
     {
         return date;
     }
 
+    /**
+     * A accessors for instance variable sentiment
+     *
+     * @return  sentiment as a double
+     */
     public double getSentiment()
     {
         return sentiment;
     }
 
+    /**
+     * returns a string of all instence varables
+     *
+     * @return  all instence varables in string form
+     */
     public String toString ()
     {
        String str="User: "+user+", Text: "+text+", Location: "+location+", Date: "+date+", Sentiment: "+sentiment;

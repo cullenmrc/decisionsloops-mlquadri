@@ -2,6 +2,8 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import java.util.Date;
+import twitter4j.*;
 /**
  * Write a description of test class TweetTest here.
  * 
@@ -41,18 +43,19 @@ public class TweetTest
     @Test
     public void test()
     {
-        Date date= 1;
-        GeoLocation location= 1;
+        Date date;
+        twitter4j.GeoLocation location;
         double Sentiment= 1;
-        String Text= "1";
-        String User= "1";
-        String toString= "1";
+        String text= "1";
+        String user= "1";
+        
         Tweet t = new Tweet(user, text, location, date);
-        Date date= t.getDate();
-        GeoLocation location= t.getLocation();
-        double Sentiment= t.getSentiment();
-        String Text= t.getText();
-        String User= t.getUser();
+        
+        Date datet= t.getDate();
+        GeoLocation locationt= t.getLocation();
+        double sentimentt= t.getSentiment();
+        String textt= t.getText();
+        String usert= t.getUser();
         String toString= t.toString();
     }
 }

@@ -2,6 +2,8 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import java.util.Date;
+import twitter4j.*;
 /**
  * Write a description of test class StateTest here.
  * 
@@ -38,15 +40,17 @@ public class StateTest
     public int sampleMethod()
     {
         String abbreviation="1";
-        GeoLocation center=1;
+        twitter4j.GeoLocation center;
         double area=1;
+        
         State s = new State(abbreviation, center, area);
-        double sentiment=s.setSentiment
-        double radius=s.getRadius
-        String abbreviation=s.getAbbreviation
-        GeoLocation center=s.
-        double area=s.getArea
-        double sentiment=s.getSentiment()
-        String toString=s.toString
+        
+        double sentiment=s.setSentiment(1.1);
+        double radius=s.getRadius();
+        String abbreviationt=s.getAbbreviation();
+        twitter4j.GeoLocation centert=s.getCenter();
+        double area=s.getArea();
+        double sentiment=s.getSentiment();
+        String toString=s.toString();
     }
 }
