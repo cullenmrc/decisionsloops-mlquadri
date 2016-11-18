@@ -37,6 +37,7 @@ public class TwitterMapper
     public static void main ( String[] args ) throws TwitterException, IOException
     {
         TwitterMapper twitterMapper = new TwitterMapper( "coding" );
+        
     }
     
     
@@ -86,7 +87,7 @@ public class TwitterMapper
         QueryResult result = twitter.search(query);
         for (Status status : result.getTweets())
         {
-           //System.out.println("@" + status.getUser().getScreenName() + ":" + status.getText());
+           
         }
     }
     
@@ -174,7 +175,7 @@ public class TwitterMapper
                 Double longitude = in.nextDouble();
                 Double latitude = in.nextDouble();
                 Double area= in.nextDouble();
-                in.nextline();
+                in.nextLine();
                 this.states.add( new State( abbreviation, new GeoLocation( longitude, latitude ), area ));
             }
             in.close();
